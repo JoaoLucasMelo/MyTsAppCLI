@@ -32,14 +32,14 @@ const Tab = () => {
         }}
       />
       <Tab.Screen
-        name="Second"
+        name="Pokedex"
         component={PageTwo}
         options={{
           headerStyle: {backgroundColor: '#2a7dd1'},
           headerTintColor: 'white',
           tabBarLabelStyle: {fontSize: 14, paddingBottom: 3},
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="blur" color={color} size={size} />
+            <MaterialCommunityIcons name="pokeball" color={color} size={size} />
           ),
           tabBarActiveBackgroundColor: '#2a7dd1',
           tabBarActiveTintColor: 'white'

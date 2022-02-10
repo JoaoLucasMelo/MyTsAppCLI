@@ -1,21 +1,10 @@
 import { create } from 'apisauce';
-import { useState } from 'react';
+import { Pokemon } from './pokemonsModal';
 
 const api = create({
     baseURL: 'https://pokeapi.co/api/v2/pokemon/'
 });
 
 
-export const getPokemons = async () => {
+export const getPokemons = (name: String) => { return api.get<Pokemon>(name.toString()) }
 
-    let [name, setName] = useState('')
-
-    try {
-        const res: Object = await api.get<Object>('charmander')
-        setName(res.data.name)
-        console.log(name)
-        return name.toString()
-    } catch (error) {
-        console.error(error);
-    }
-}
