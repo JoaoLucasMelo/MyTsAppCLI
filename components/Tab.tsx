@@ -4,9 +4,24 @@ import PageTwo from '../screens/PageTwo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Store from '../screens/Store';
 import NotesScreen from '../screens/NotesScreen';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import ProductDetails from './store/ProductDetails';
 
 const Tab = () => {
   const Tab = createBottomTabNavigator();
+
+  const Stack = createNativeStackNavigator();
+
+  const StackNavigator = () => (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Store"
+        options={{headerShown: false}}
+        component={Store}
+      />
+      <Stack.Screen name="ProductDetails" component={ProductDetails} />
+    </Stack.Navigator>
+  );
 
   return (
     <Tab.Navigator
@@ -47,7 +62,7 @@ const Tab = () => {
       />
       <Tab.Screen
         name="Store"
-        component={Store}
+        component={StackNavigator}
         options={{
           headerStyle: {backgroundColor: '#2a7dd1'},
           headerTintColor: 'white',

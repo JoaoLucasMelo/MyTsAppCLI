@@ -18,14 +18,15 @@ interface Props {
     image: String;
     rating: {rate: Number; count: Number};
   };
+  onPress: Function;
 }
 
-const Product: React.FC<Props> = ({product}) => {
+const Product: React.FC<Props> = ({product, onPress}) => {
   const screenWidth = Dimensions.get('window').width / 2;
 
   return (
     <View style={[styles.containterOut, {width: screenWidth}]}>
-      <TouchableOpacity activeOpacity={0.9}>
+      <TouchableOpacity activeOpacity={0.9} onPress={() => onPress()}>
         <View style={styles.containter}>
           <Image
             style={{height: 150, width: 150, resizeMode: 'contain'}}

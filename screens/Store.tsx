@@ -1,15 +1,8 @@
 import React, {useState} from 'react';
-import {
-  FlatList,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text
-} from 'react-native';
+import {FlatList, SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import {getProducts} from '../components/store/client';
 import Product from '../components/store/Product';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
 
 const Store = () => {
   let [products, setProducts] = useState<
@@ -24,6 +17,8 @@ const Store = () => {
     }>
   >();
 
+  const navigation = useNavigation();
+
   const handleGet = async () => {
     const productsApi = await getProducts();
     setProducts((products = productsApi.data));
@@ -36,7 +31,14 @@ const Store = () => {
           data={products}
           numColumns={2}
           horizontal={false}
-          renderItem={({item}) => <Product product={item} />}
+          renderItem={({item}) => (
+            <Product
+              product={item}
+              onPress={() =>
+                navigation.navigate('ProductDetails', {product: item})
+              }
+            />
+          )}
         />
       </ScrollView>
     </SafeAreaView>

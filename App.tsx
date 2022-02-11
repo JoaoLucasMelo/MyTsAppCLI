@@ -8,15 +8,6 @@ import Store from './screens/Store';
 const App = () => {
   console.warn = () => {};
 
-  const Stack = createNativeStackNavigator();
-
-  const StackNavigator = () => (
-    <Stack.Navigator>
-      <Stack.Screen name="ProductDetails" component={ProductDetails} />
-      <Stack.Screen name="Store" component={Store} />
-    </Stack.Navigator>
-  );
-
   return (
     <NavigationContainer>
       <Tab />
