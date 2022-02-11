@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Scene } from 'react-native-router-flux'
+import { Router, Scene, } from 'react-native-router-flux'
 import ProductDetails from './components/store/ProductDetails'
 import Store from './screens/Store'
 
