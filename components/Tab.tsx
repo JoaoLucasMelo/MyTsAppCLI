@@ -2,7 +2,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import PageTwo from '../screens/PageTwo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import PageThree from '../screens/PageThree';
+import Store from '../screens/Store';
 import NotesScreen from '../screens/NotesScreen';
 
 const Tab = () => {
@@ -46,8 +46,8 @@ const Tab = () => {
         }}
       />
       <Tab.Screen
-        name="Third"
-        component={PageThree}
+        name="Store"
+        component={Store}
         options={{
           headerStyle: {backgroundColor: '#2a7dd1'},
           headerTintColor: 'white',
