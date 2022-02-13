@@ -30,7 +30,7 @@ const Product: React.FC<Props> = ({product, onPress}) => {
         <View style={styles.containter}>
           <Image
             style={{height: 150, width: 150, resizeMode: 'contain'}}
-            source={product.image}
+            source={{uri: product.image}}
           />
           <Text numberOfLines={1} style={styles.title}>
             {product.title}

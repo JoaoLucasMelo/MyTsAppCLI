@@ -18,7 +18,7 @@ const MyNotes: React.FC<Props> = ({notes, onDelete}) => {
   }, []);
 
   return (
-    <ScrollView style={{height: windowHeight - 180}}>
+    <ScrollView style={{height: windowHeight - 280}}>
       <FlatList
         nestedScrollEnabled
         data={notes}

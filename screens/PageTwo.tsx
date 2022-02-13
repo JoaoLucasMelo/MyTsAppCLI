@@ -24,10 +24,9 @@ export default function PageTwo() {
       const newPoke = new Pokemon(poke.data);
       if (newPoke) {
         setPokemon((pokemon = newPoke));
-        console.log(newPoke);
       }
     } catch (error) {
-      console.error(error);
+      console.error('Please enter a valid Pokemon name.');
     }
   };
 
@@ -44,7 +43,7 @@ export default function PageTwo() {
       <TextInput
         style={styles.input}
         maxLength={20}
-        placeholder="Pokemon Name..."
+        placeholder="Enter Pokemon name..."
         placeholderTextColor="#999999"
         defaultValue={name.toString()}
         onChangeText={text => setName(text)}

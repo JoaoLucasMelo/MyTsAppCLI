@@ -30,6 +30,7 @@ const Note: React.FC<Props> = ({note, remove}) => {
     const handlePress = () => {
       confirm({
         title: 'Delete this note?',
+        titleStyle: {color: 'black'},
         showCancel: true,
         confirmLabel: 'Delete',
         confirmButtonStyle: {backgroundColor: '#ff5d5d'},

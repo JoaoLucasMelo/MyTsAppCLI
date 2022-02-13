@@ -35,7 +35,7 @@ const Store = () => {
             <Product
               product={item}
               onPress={() =>
-                navigation.navigate('ProductDetails', {product: item})
+                navigation.navigate('Product Details', {product: item})
               }
             />
           )}

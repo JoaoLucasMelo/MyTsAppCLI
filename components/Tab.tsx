@@ -19,7 +19,11 @@ const Tab = () => {
         options={{headerShown: false}}
         component={Store}
       />
-      <Stack.Screen name="ProductDetails" component={ProductDetails} />
+      <Stack.Screen
+        name="Product Details"
+        options={{headerTitleAlign: 'center', statusBarAnimation: 'slide'}}
+        component={ProductDetails}
+      />
     </Stack.Navigator>
   );
 
